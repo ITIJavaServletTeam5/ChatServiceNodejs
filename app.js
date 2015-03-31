@@ -12,25 +12,25 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.post('/rest/register', function(req, res) {
 	request.post({url: (SERVER_IP + "/rest/register"), json: req.body}, function(error, response, body) {
-		res.send(data)
+		res.send(body)
 	})
 })
 
 app.post('/rest/login', function(req, res) {
-	request.post({url: (SERVER_IP + "/rest/login"), json: req.body}, function(data) {
-		res.send(data)
+	request.post({url: (SERVER_IP + "/rest/login"), json: req.body}, function(error, response, body) {
+		res.send(body)
 	})
 })
 
 app.post('/rest/view', function(req, res) {
-	request.post({url: (SERVER_IP + "/rest/view"), json: req.body}, function(data) {
-		res.send(data)
+	request.post({url: (SERVER_IP + "/rest/view"), json: req.body}, function(error, response, body) {
+		res.send(body)
 	})
 })
 
 app.post('/rest/edit', function(req, res) {
-	request.post({url: (SERVER_IP + "/rest/edit"), json: req.body}, function(data) {
-		res.send(data)
+	request.post({url: (SERVER_IP + "/rest/edit"), json: req.body}, function(error, response, body) {
+		res.send(body)
 	})
 })
 
