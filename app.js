@@ -3,7 +3,6 @@ var bodyParser = require('body-parser')
 var request = require('request')
 
 // Jersey Server IP
-
 var SERVER_IP = "http://localhost:8084/ChatService"
 
 var app = express()
