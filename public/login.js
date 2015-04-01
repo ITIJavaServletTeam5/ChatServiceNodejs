@@ -1,17 +1,22 @@
-$("#login").click(function() {
-	$.get("/rest/login", {username: $("#username").val(), password: $("#password").val()}, function(data) {
-		if (data.success === true) {
-			console.log(data.success);
-			window.location = "/chat.html?username=" + $("#username").val();
-		} else {
-			$("#signInForm").html(
-                            "<div class=\"alert alert-danger alert-dismissable\">" +
-                                "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>" +
-                                "wrong username or password" +
-                            "</div>"
-				)
-		}
-	})
+$("#login").click(function () {
+    $.post("/rest/login", {mobile: $("#mobile").val(), password: $("#password").val()}, function (data) {
+        if (data.success === true) {
+            if (typeof (Storage) != "undefined") {
+                // Store
+                localStorage.user = JSON.stringify(data.user);
+                console.log(JSON.parse(localStorage.user));
+            }
+            console.log(data.success);
+            window.location = "/view.html";
+        } else {
+            $("#signInForm").html(
+                    "<div class=\"alert alert-danger alert-dismissable\">" +
+                    "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>" +
+                    "wrong username or password" +
+                    "</div>"
+                    )
+        }
+    })
 })
 
 // $(document).ready(function () {
