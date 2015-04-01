@@ -1,22 +1,33 @@
 var imageData
 
 $("#register").click(function() {
-	$.post("/rest/register", {username: $("#username").val(),
+	$.post("/rest/register", {displayName: $("#displayName").val(),
 							 password: $("#password").val(),
 							 mobile: $("#mobile").val(),
-							 image: imageData}, function(data) {
+							 email: $("#email").val(),
+							 fullName: $("#fullName").val(),
+							 profileImage: imageData}, function(data) {
 		if (data.success === true) {
 			console.log(data.success);
 			window.location = "/login.html";
-		};
+		} else {
+			console.log(data.success);
+			console.log(data.error);
+
+			$("#error").html(
+				"<div class=\"alert alert-danger alert-dismissable\">" +
+				"<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>" +
+				data.error +
+				"</div>")
+		}
 	})
 })
 
-// read image data
-$("#image").change(function() {
+// read profileImage data
+$("#profileImage").change(function() {
 	var preview = document.querySelector("img")
 	// var file = document.querySelector("input[type=file]").files[0]
-	var file = $("#image")[0].files[0]
+	var file = $("#profileImage")[0].files[0]
 	var reader = new FileReader()
 
 	reader.onloadend = function() {

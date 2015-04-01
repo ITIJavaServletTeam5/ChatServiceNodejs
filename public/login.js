@@ -1,18 +1,18 @@
 $("#login").click(function () {
     $.post("/rest/login", {mobile: $("#mobile").val(), password: $("#password").val()}, function (data) {
         if (data.success === true) {
-            if (typeof (Storage) != "undefined") {
+            // if (typeof (Storage) != "undefined") {
                 // Store
-                localStorage.user = JSON.stringify(data.user);
-                console.log(JSON.parse(localStorage.user));
-            }
+            localStorage.user = JSON.stringify(data.user);
+            console.log(JSON.parse(localStorage.user));
+            // }
             console.log(data.success);
             window.location = "/view.html";
         } else {
             $("#signInForm").html(
                     "<div class=\"alert alert-danger alert-dismissable\">" +
                     "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>" +
-                    "wrong username or password" +
+                    data.error +
                     "</div>"
                     )
         }
