@@ -36,22 +36,25 @@
                     <div class="panel-body">
                         <!-- <form role="form"> -->
                             <fieldset>
-                                <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input class="form-control" id="username" placeholder="Username" name="username" type="text" autofocus>
+                                <div>
+                                    <label>Display Name: </label>
+                                    <label id="displayName"></label>
                                 </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input class="form-control" id="password" placeholder="Password" name="password" type="password">
+                                <div>
+                                    <label>Mobile: </label>
+                                    <label id="mobile"></label>
                                 </div>
-                                <div class="form-group">
-                                    <label for="mobile">Mobile</label>
-                                    <input class="form-control" id="mobile" placeholder="Mobile Number" name="mobile" type="text">
+                                <div>
+                                    <label>Email: </label>
+                                    <label id="email"></label>
                                 </div>
-                                <div class="form-group">
-                                    <label for="image">Image</label>
-                                    <input class="form-control" id="image" name="image" type="file" accept=".jpg">
-                                    <!--<img src="" height="200" alt="preview">-->
+                                <div>
+                                    <label>Full Name: </label>
+                                    <label id="fullName"></label>
+                                </div>
+                                <div>
+                                    <label for="image">Image: </label>
+                                    <img src="" height="200" alt="preview">
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button id="edit" class="btn btn-lg btn-success btn-block">Edit</button>
@@ -71,6 +74,6 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="register.js"></script>
+    <script type="text/javascript" src="view.js"></script>
 </body>
 </html>
