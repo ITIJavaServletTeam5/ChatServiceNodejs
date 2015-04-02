@@ -1,3 +1,7 @@
+if (localStorage.user !== undefined) {
+    window.location = "/view.html";
+};
+
 $("#login").click(function () {
     $.post("/rest/login", {mobile: $("#mobile").val(), password: $("#password").val()}, function (data) {
         if (data.success === true) {

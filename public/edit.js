@@ -1,5 +1,9 @@
 var imageData
 
+if (localStorage.user === undefined) {
+    window.location = "/login.html";
+};
+
 $(document).ready(function () {
     var user = JSON.parse(localStorage.user)
     $("#displayName").val(user.displayName);

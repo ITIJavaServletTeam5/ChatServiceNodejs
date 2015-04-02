@@ -1,5 +1,9 @@
 var imageData
 
+if (localStorage.user !== undefined) {
+    window.location = "/view.html";
+};
+
 $("#register").click(function() {
 	$.post("/rest/register", {displayName: $("#displayName").val(),
 							 password: $("#password").val(),
